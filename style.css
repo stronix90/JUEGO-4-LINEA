@@ -1,0 +1,84 @@
+body {
+  background-image: url("https://img.freepik.com/foto-gratis/accesorios-juegos-caseros-vista-superior_23-2148234812.jpg?w=826");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input {
+  height: 2rem;
+  font-size: 2rem;
+  width: 4rem;
+  text-align: center;
+}
+
+.turno_box{
+  padding: .5rem 3rem .8rem;
+  border-radius: 0 0 1rem 1rem;
+  BOX-SHADOW: 0 0 10px 0 black;
+  color:white
+}
+
+.player1 {
+  background: rgb(194, 0, 0);
+  background: linear-gradient(0deg, rgb(194, 0, 0) 0%,rgb(252, 2, 2) 100%);
+}
+
+.player2 {
+  background: rgb(13,97,5);
+  background: linear-gradient(0deg, rgba(13,97,5,1) 0%, rgba(23,136,12,1) 100%);
+}
+
+.turno_winner {
+  background: rgb(242,247,14);
+  background: linear-gradient(180deg, rgba(242,247,14,1) 0%, rgba(255,196,0,1) 100%);
+}
+
+.turno_winner p{
+  color:black!important
+}
+
+
+.game {
+  display: grid;
+  gap: 30px;
+  background: #000e6e;
+  padding: 50px;
+  border-radius: 2rem;
+  BOX-SHADOW: 2px 2px 5px 0 rgba(0, 0, 0,.5);
+}
+
+.game div {
+  background: rgb(212, 212, 212);
+  border-radius: 50%;
+}
+
+.game [data-value="player1"] {
+  background: red;
+  box-shadow: inset 1px 1px 10px black;
+}
+
+.game [data-value="player2"] {
+  background: green;
+  box-shadow: inset 1px 1px 10px black;
+}
+
+@keyframes winner_animation {
+  0% {
+    box-shadow: inset 1px 1px 10px black, 0 0 10px 5px rgba(255,215,0,0);
+  }
+  30%,
+  70% {
+    box-shadow: inset 1px 1px 10px black, 0 0 10px 5px gold;
+    /* outline: solid 5px gold; */
+  }
+  100% {
+    box-shadow: inset 1px 1px 10px black, 0 0 10px 5px rgba(255,215,0,0);
+  }
+}
+
+.game .winner {
+  animation-name: winner_animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
